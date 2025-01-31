@@ -1,9 +1,9 @@
 <section class="nav-section">
   <header>
-    <nav>
+    <nav [class.active]="isActive">
       <ul>
         <div>
-          <li><a routerLink="/home" routerLinkActive="active" class="rotating-letter">{{ translate('V') }}</a></li>
+          <li><a href="/home" routerLinkActive="active" class="rotating-letter webV">{{ translate('V') }}</a></li>
           <li><a href="#about">{{ translate('ABOUT_ME') }}</a></li>
           <li><a href="#Projects">{{ translate('PROJECTS') }}</a></li>
           <li><a href="#Contact">{{ translate('CONTACT') }}</a></li>
@@ -13,13 +13,23 @@
             <button [class.active]="currentLanguage === 'ka'" (click)="switchLanguage('ka')">KA</button>
             <button [class.active]="currentLanguage === 'en'" (click)="switchLanguage('en')">EN</button>
           </span>
+          <span>
           <a href="https://github.com/VakoNarimanidze" target="_blank"><i class="fab fa-github soc"></i></a>
           <a href="https://www.instagram.com/vako_narimanidze?igsh=cmIzZ2p0M3N1OTVs&utm_source=qr" target="_blank"><i class="fab fa-instagram soc"></i></a>
           <a href="https://www.facebook.com/share/1AGWu3HYFQ/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f soc"></i></a>
           <a href="www.linkedin.com/in/valeri-narimanidze-9149602a6" target="_blank"><i class="fab fa-linkedin-in soc"></i></a>
+        </span>
         </div>
       </ul>
     </nav>
+    <div class="burgerNav" (click)="toggleBurger()">
+      <li><a href="/home" routerLinkActive="active" class="rotating-letter mobV">{{ translate('V') }}</a></li>
+      <div class="burger">
+        <span class="firstSpan" [class.rotate-down]="isActive"></span>
+        <span class="secondSpan" [class.fade-out]="isActive"></span>
+        <span class="thirdSpan" [class.rotate-up]="isActive"></span>
+      </div>
+    </div>
   </header>
 
   <h1>{{ translate('WELCOME') }}</h1>

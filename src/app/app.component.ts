@@ -14,6 +14,7 @@ interface Translations {
 export class AppComponent {
   translations: Translations = {
     en: {
+      V:"V",
       WELCOME: "Welcome to my portfolio",
       ABOUT_ME: "About Me",
       ABOUT_TEXT: "My name is Valeri Narimanidze, I'm 19 years old and a front-end developer based in Tbilisi/Georgia. I have developed many types of projects from the well-known Academy 'It Step Academy'. I have experience working with HTML, CSS, SASS, JavaScript and I'm currently learning Angular with TypeScript. To see my projects, visit my Github or check out the projects below",
@@ -24,6 +25,7 @@ export class AppComponent {
       CONTACT:"Contact Me"
     },
     ka: {
+      V:"ვ",
       WELCOME: "მოგესალმებით ჩემს პორტფოლიოში",
       ABOUT_ME: "ჩემ შესახებ",
       ABOUT_TEXT: "ჩემი სახელი არის ვალერი ნარიმანიძე, ვარ 19 წლის  და Front-End დეველოპერი თბილისიდან/საქართველო. მაქვს ბევრი სახის პროექტები ცნობილი 'It Step Academy'-დან. მაქვს გამოცდილება HTML, CSS, SASS, JavaScript-ში და ამჟამად ვსწავლობ Angular-ს TypeScript-ით.  ჩემი პროექტების სანახავად, ეწვიეთ ჩემს Github-ს ან ქვემოთ მოცემულ პროექტებს",
@@ -31,7 +33,7 @@ export class AppComponent {
       STAR_HOTEL: "სტარჰოტელი API-ით",
       REPOSITORY: "რეპოზიტორია",
       WEBSITE: "ვებგვერდი",
-      CONTACT:  "დამეკონტაქტე"
+      CONTACT:  "საკონტაქტო"
     }
   };
 
@@ -44,4 +46,9 @@ export class AppComponent {
   translate(key: string): string {
     return this.translations[this.currentLanguage]?.[key] || key;
   }
+
+  isActive:boolean = false;
+   toggleBurger(){
+    this.isActive = !this.isActive
+   }
 }

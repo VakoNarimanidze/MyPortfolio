@@ -1,8 +1,7 @@
 .nav-section {
-    background-image: url("https://wallpaperaccess.com/full/5065781.jpg");
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
+  position: relative;
+    background: url("https://wallpaperaccess.com/full/5065781.jpg") no-repeat center/cover;
+    min-height: 100vh;
     background-attachment: fixed;
     image-rendering: -webkit-optimize-contrast;
     width: 100%;
@@ -48,6 +47,7 @@
     display: inline-block;
     font-size: 3rem;
     font-weight: bold;
+    font-family: 'Poppins', sans-serif;
     animation: spin 3s linear infinite;
     transform-origin: center;
     color: #D4AF37 !important;
@@ -96,12 +96,49 @@
     position: relative;
     text-align: center;
     top: 400px;
+    margin-top: 40px;
     font-size: 65px;
     color: #D4AF37;
     margin-bottom: 20px;
     animation: fadeIn 2s ease-out;
     font-family: 'Poppins', sans-serif;
   }
+
+  .burgerNav {
+    display: none;
+    cursor: pointer;
+    align-items: center;
+  }
+  
+  .burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+  }
+  
+  .burger span {
+    background-color: #333;
+    height: 3px;
+    width: 100%;
+    border-radius: 2px;
+    transition: all 0.4s ease;
+  }
+  
+  .firstSpan.rotate-down {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .secondSpan.fade-out {
+    opacity: 0;
+  }
+  
+  .thirdSpan.rotate-up {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
   
   
   .intro-section {
@@ -182,7 +219,7 @@
   }
   
   .project-item {
-    background-image: url('https://i.pinimg.com/736x/06/e2/a1/06e2a14bb2ccbd7e3f9f443ead2b1493.jpg');
+    background-image: url('https://i.pinimg.com/236x/7c/37/34/7c3734b6ea8e0d019b418378a9c6c3b9.jpg');
     background-size: cover;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);  
@@ -332,16 +369,97 @@
     color: #999;
     margin-top: 30px;
 }
+@media (max-width: 1024px) {
+    .footer-contact {
+        flex-direction: column;
+    }
+    .nav-section h1{
+      top: 300px;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+}
 
 @media (max-width: 768px) {
     .footer-container {
         width: 100%;
         padding: 0 10px;
     }
+
+    nav {
+      display: none;
+      transform: translateX(100%);
+    }
+  
+    .burgerNav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-inline: 20px;
+    }
+    .burgerNav li{
+      list-style: none;
+    }
+    .burgerNav li a{
+      text-decoration: none;
+    }
+  
+    nav.active {
+      display: flex !important;
+      background-color: #16192C;
+      position: absolute;
+      top: 90px;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      transition: all 1.5s ease-out;
+      animation: slideIn 1.5s ease forwards;
+    }
+
+    nav.active ul{
+      flex-direction: column;
+      justify-content: start;
+    }
+    nav.active ul li{
+      padding: 10px 0;  
+    }
+    nav.active ul div{
+      flex-direction: column;
+    }
+    nav.active .webV{
+      display: none;
+    }
+    nav.active span{
+      padding: 10px 0;
+    }
+    nav.acitve .nav-section{
+      background-attachment: local !important;
+      transition: background-position 0.3s ease;
+    }
+
+    @keyframes slideIn {
+      0% {
+        opacity: 0;
+        transform: translatex(100%);
+      }
+      100% {
+        opacity: 1;
+        transform: translatex(0%);
+      }
+      
+    }
 }
 
 @media (max-width: 480px) {
     .footer-contact {
         max-width: 100%;
+    }
+    .nav-section{
+      height:750px;
     }
 }
