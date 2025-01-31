@@ -462,4 +462,7 @@
     .nav-section{
       height:750px;
     }
+    .nav-section h1{
+      top: 250px;
+    }
 }
