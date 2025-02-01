@@ -363,6 +363,32 @@
 .submit-btn:hover {
     background-color: #e67e22; 
 }
+button.submit-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.result-message {
+  position: fixed;
+  top: 20px;
+  width: 50%;
+  left: 25%;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.success-message {
+  background-color: #4CAF50;
+  color: white;
+  align-self: center;
+}
+
+.error-message {
+  background-color: #f44336;
+  color: white;
+}
+
 
 .footer-container p {
     font-size: 1rem;
@@ -460,9 +486,10 @@
         max-width: 100%;
     }
     .nav-section{
-      height:750px;
+      height:500px;
     }
     .nav-section h1{
-      top: 250px;
+      top: 220px;
+      font-size: 55px;
     }
 }
